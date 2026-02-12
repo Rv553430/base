@@ -1,10 +1,10 @@
 'use client'
 
 import { createContext, useContext, useEffect, useState, ReactNode } from 'react'
-import { MiniAppSDK } from '@farcaster/miniapp-sdk'
+import sdk from '@farcaster/miniapp-sdk'
 
 interface MiniappContextType {
-  sdk: MiniAppSDK | null
+  sdk: typeof sdk | null
   isReady: boolean
   context: any
   user: any
@@ -26,7 +26,6 @@ interface MiniappProviderProps {
 }
 
 export function MiniappProvider({ children }: MiniappProviderProps) {
-  const [sdk, setSdk] = useState<MiniAppSDK | null>(null)
   const [isReady, setIsReady] = useState(false)
   const [context, setContext] = useState<any>(null)
   const [user, setUser] = useState<any>(null)
@@ -36,16 +35,13 @@ export function MiniappProvider({ children }: MiniappProviderProps) {
       try {
         // Check if running in Farcaster frame context
         if (typeof window !== 'undefined' && window.parent !== window) {
-          const miniappSdk = new MiniAppSDK()
-          
           // Initialize the SDK
-          await miniappSdk.ready()
+          await sdk.ready()
           
           // Get context
-          const ctx = await miniappSdk.getContext()
-          const usr = await miniappSdk.getUser()
+          const ctx = await sdk.getContext()
+          const usr = await sdk.getUser()
           
-          setSdk(miniappSdk)
           setContext(ctx)
           setUser(usr)
           setIsReady(true)

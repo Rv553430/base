@@ -12,26 +12,7 @@ const nextConfig = {
     minimumCacheTTL: 60,
   },
 
-  // Turbopack configuration (Next.js 16 default bundler)
-  turbopack: {
-    // Resolve aliases for cleaner imports
-    resolveAlias: {
-      // Add any custom aliases here if needed
-      // '@/components': './components',
-    },
-    // File extension resolution
-    resolveExtensions: ['.tsx', '.ts', '.jsx', '.js', '.json'],
-    // Module rules for additional file types
-    rules: {
-      // Example: Support for SVG as React components
-      '*.svg': {
-        loaders: [],
-        as: '*.js',
-      },
-    },
-  },
-
-  // Experimental features (non-turbopack)
+  // Experimental features for Next.js 14
   experimental: {
     // Optimize package imports for faster builds
     optimizePackageImports: [
@@ -39,8 +20,6 @@ const nextConfig = {
       'wagmi',
       'viem',
     ],
-    // Enable filesystem cache for development (Turbopack)
-    turbopackFileSystemCacheForDev: true,
   },
 
   // TypeScript - faster builds
@@ -55,9 +34,6 @@ const nextConfig = {
 
   // Compression
   compress: true,
-
-  // React Compiler (Next.js 16 feature)
-  reactCompiler: true,
 
   // Headers for performance and CORS
   async headers() {
