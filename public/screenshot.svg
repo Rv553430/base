@@ -1,0 +1,53 @@
+<svg width="1284" height="2778" viewBox="0 0 1284 2778" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1284" height="2778" fill="#0a0a0a"/>
+  
+  <!-- Gradient Overlay -->
+  <rect width="1284" height="2778" fill="url(#bg-gradient)" opacity="0.3"/>
+  
+  <!-- Header -->
+  <rect x="0" y="0" width="1284" height="140" fill="#111"/>
+  <text x="100" y="95" font-size="56" font-weight="bold" fill="white" font-family="system-ui, -apple-system, sans-serif">🎯 NFT Scout</text>
+  
+  <!-- Main Icon -->
+  <rect x="442" y="300" width="400" height="400" rx="80" fill="url(#gradient)"/>
+  <path d="M642 380L782 460V540L642 620L502 540V460L642 380Z" stroke="white" stroke-width="16" fill="none" opacity="0.9"/>
+  <path d="M642 420L742 480V520L642 580L542 520V480L642 420Z" stroke="white" stroke-width="12" fill="none" opacity="0.7"/>
+  <text x="642" y="530" font-size="96" font-weight="bold" text-anchor="middle" fill="white" font-family="system-ui, -apple-system, sans-serif">NFT</text>
+  
+  <!-- Title -->
+  <text x="642" y="850" font-size="96" font-weight="bold" text-anchor="middle" fill="white" font-family="system-ui, -apple-system, sans-serif">Discover Early NFTs</text>
+  <text x="642" y="960" font-size="56" text-anchor="middle" fill="#9ca3af" font-family="system-ui, -apple-system, sans-serif">on Base Blockchain</text>
+  
+  <!-- Feature Cards -->
+  <rect x="100" y="1100" width="1084" height="200" rx="40" fill="#1a1a2e"/>
+  <text x="180" y="1180" font-size="48" font-weight="bold" fill="#a855f7" font-family="system-ui, -apple-system, sans-serif">🔍 Track Fresh Mints</text>
+  <text x="180" y="1240" font-size="36" fill="#9ca3af" font-family="system-ui, -apple-system, sans-serif">Real-time NFT discovery from the blockchain</text>
+  
+  <rect x="100" y="1350" width="1084" height="200" rx="40" fill="#1a1a2e"/>
+  <text x="180" y="1430" font-size="48" font-weight="bold" fill="#ec4899" font-family="system-ui, -apple-system, sans-serif">📊 Early Score</text>
+  <text x="180" y="1490" font-size="36" fill="#9ca3af" font-family="system-ui, -apple-system, sans-serif">Calculate rarity and potential value</text>
+  
+  <rect x="100" y="1600" width="1084" height="200" rx="40" fill="#1a1a2e"/>
+  <text x="180" y="1680" font-size="48" font-weight="bold" fill="#3b82f6" font-family="system-ui, -apple-system, sans-serif">👛 Check Any Wallet</text>
+  <text x="180" y="1740" font-size="36" fill="#9ca3af" font-family="system-ui, -apple-system, sans-serif">View NFT holdings instantly</text>
+  
+  <!-- CTA Button -->
+  <rect x="342" y="2000" width="600" height="120" rx="60" fill="url(#gradient)"/>
+  <text x="642" y="2085" font-size="48" font-weight="bold" text-anchor="middle" fill="white" font-family="system-ui, -apple-system, sans-serif">Launch App</text>
+  
+  <!-- Footer -->
+  <text x="642" y="2600" font-size="40" text-anchor="middle" fill="#6b7280" font-family="system-ui, -apple-system, sans-serif">base-phi-tan.vercel.app</text>
+  
+  <defs>
+    <linearGradient id="gradient" x1="0" y1="0" x2="1284" y2="2778" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="50%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+    <linearGradient id="bg-gradient" x1="0" y1="0" x2="1284" y2="2778" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#9333ea"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+  </defs>
+</svg>

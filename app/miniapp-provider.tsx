@@ -35,8 +35,8 @@ export function MiniappProvider({ children }: MiniappProviderProps) {
       try {
         // Check if running in Farcaster frame context
         if (typeof window !== 'undefined' && window.parent !== window) {
-          // Initialize the SDK
-          await sdk.ready()
+          // Call sdk.actions.ready() to dismiss splash screen
+          await sdk.actions.ready()
           
           // Get context
           const ctx = await sdk.getContext()

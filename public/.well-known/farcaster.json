@@ -7,7 +7,7 @@
   "frame": {
     "version": "1",
     "name": "NFT Scout",
-    "iconUrl": "https://base-phi-tan.vercel.app/icon-192x192.svg",
+    "iconUrl": "https://base-phi-tan.vercel.app/icon.svg",
     "homeUrl": "https://base-phi-tan.vercel.app",
     "imageUrl": "https://base-phi-tan.vercel.app/api/frame/image",
     "buttonTitle": "Discover NFTs",
@@ -18,12 +18,12 @@
   "subtitle": "Track fresh NFT mints on Base",
   "description": "Discover early NFTs on Base blockchain in real-time. Get instant mint alerts, Early Scores, and comprehensive wallet analytics. No storage, no backend - pure blockchain data.",
   "screenshotUrls": [
-    "https://base-phi-tan.vercel.app/api/frame/image",
-    "https://base-phi-tan.vercel.app/api/frame/image?type=wallet"
+    "https://base-phi-tan.vercel.app/screenshot.svg",
+    "https://base-phi-tan.vercel.app/api/frame/image"
   ],
   "primaryCategory": "nfts",
   "tags": ["nft", "base", "ethereum", "discovery", "mints", "early-score", "wallet-tracker"],
-  "heroImageUrl": "https://base-phi-tan.vercel.app/api/frame/image",
+  "heroImageUrl": "https://base-phi-tan.vercel.app/screenshot.svg",
   "tagline": "Discover early NFTs before they explode",
   "ogTitle": "NFT Scout | Discover Early NFTs on Base",
   "ogDescription": "Track newly minted NFTs on Base blockchain in real-time. Get Early Scores and wallet analytics.",
