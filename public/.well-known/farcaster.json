@@ -1,0 +1,44 @@
+{
+  "name": "NFT Scout",
+  "iconUrl": "https://base-phi-tan.vercel.app/icon-192x192.svg",
+  "homeUrl": "https://base-phi-tan.vercel.app",
+  "imageUrl": "https://base-phi-tan.vercel.app/api/frame/image",
+  "buttonTitle": "Discover NFTs",
+  "splashImageUrl": "https://base-phi-tan.vercel.app/splash.svg",
+  "splashBackgroundColor": "#0a0a0a",
+  "webhookUrl": "https://base-phi-tan.vercel.app/api/frame",
+  "subtitle": "Track fresh NFT mints on Base",
+  "description": "Discover early NFTs on Base blockchain. Get real-time mint alerts, Early Scores, and wallet analytics.",
+  "primaryCategory": "nfts",
+  "tags": ["nft", "base", "ethereum", "discovery", "mints"],
+  "author": {
+    "name": "NFT Scout",
+    "url": "https://base-phi-tan.vercel.app"
+  },
+  "openFrames": {
+    "version": "vNext",
+    "image": {
+      "aspectRatio": "1.91:1"
+    },
+    "buttons": {
+      "maxCount": 4
+    },
+    "input": {
+      "enabled": true
+    }
+  },
+  "frame": {
+    "version": "vNext",
+    "imageUrl": "https://base-phi-tan.vercel.app/api/frame/image",
+    "button": {
+      "title": "Open NFT Scout",
+      "action": {
+        "type": "launch_frame",
+        "name": "NFT Scout",
+        "url": "https://base-phi-tan.vercel.app",
+        "splashImageUrl": "https://base-phi-tan.vercel.app/splash.svg",
+        "splashBackgroundColor": "#0a0a0a"
+      }
+    }
+  }
+}

@@ -12,7 +12,6 @@ import { Address } from 'viem'
 
 export default function WalletChecker() {
   const { address: connectedAddress } = useAccount()
-  const [walletAddress, setWalletAddress] = useState('')
   const [ownedNfts, setOwnedNfts] = useState<NFTContract[]>([])
   const [scores, setScores] = useState<Map<string, EarlyScore>>(new Map())
   const [loading, setLoading] = useState(false)
@@ -22,7 +21,6 @@ export default function WalletChecker() {
     try {
       setLoading(true)
       setChecked(false)
-      setWalletAddress(address)
 
       // First get recent contracts
       const mintEvents = await scanRecentMints(100)

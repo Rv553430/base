@@ -246,7 +246,7 @@ export default function NFTDetailPage() {
               <div>
                 <h3 className="text-lg font-semibold text-white mb-4">Attributes</h3>
                 <div className="grid grid-cols-2 gap-3">
-                  {contract.metadata.attributes.map((attr: any, idx: number) => (
+                  {contract.metadata.attributes.map((attr: { trait_type: string; value: string | number }, idx: number) => (
                     <div key={idx} className="bg-gray-800 rounded-lg p-3">
                       <p className="text-xs text-gray-500 uppercase">{attr.trait_type}</p>
                       <p className="text-white font-medium">{attr.value}</p>

@@ -13,13 +13,6 @@ export default function ScoreBadge({ score, size = 'md' }: ScoreBadgeProps) {
     return 'bg-gradient-to-r from-red-500 to-pink-500'
   }
 
-  const getScoreLabel = (score: number) => {
-    if (score >= 80) return 'Excellent'
-    if (score >= 60) return 'Good'
-    if (score >= 40) return 'Fair'
-    return 'Early'
-  }
-
   const sizeClasses = {
     sm: 'text-xs px-2 py-0.5',
     md: 'text-sm px-3 py-1',
