@@ -1,4 +1,9 @@
 {
+  "accountAssociation": {
+    "header": "eyJmaWQiOjE0NDEwNjMsInR5cGUiOiJjdXN0b2R5Iiwia2V5IjoiMHgwMDgxRmNBNGNFNjRFNkQ4ZEU1Nzg3MUUxNUQyMjMyYTIwNzQzQjdGIn0",
+    "payload": "eyJkb21haW4iOiJiYXNlLXBoaS10YW4udmVyY2VsLmFwcCJ9",
+    "signature": "OJC2uDUkCFAg2O+ApMkbaXMla53Pka7+RZum4nhlJq0gnL6rha8jXCtYUOzCQT/L9vJlBuu4/Ow1ibmPUGD0pBs="
+  },
   "name": "NFT Scout",
   "iconUrl": "https://base-phi-tan.vercel.app/icon-192x192.svg",
   "homeUrl": "https://base-phi-tan.vercel.app",
