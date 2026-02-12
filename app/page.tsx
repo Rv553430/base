@@ -12,6 +12,7 @@ import { checkWalletNFTs } from '@/lib/contractUtils'
 import { Address } from 'viem'
 import { debounce } from '@/lib/cache'
 import { ShareToFarcasterButton, AddFrameButton } from '@/components/FarcasterActions'
+import { ClientTime } from '@/components/ClientTime'
 
 // Items per page for pagination
 const ITEMS_PER_PAGE = 12
@@ -171,7 +172,7 @@ export default function Home() {
   }, [autoRefresh, fetchNFTs])
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950">
+    <div className="min-h-screen min-h-[100dvh] bg-gray-950" style={{ backgroundColor: '#0a0a0a' }}>
       {/* Header */}
       <header className="border-b border-gray-800 bg-gray-950/80 backdrop-blur-md sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
@@ -185,13 +186,15 @@ export default function Home() {
                 <p className="text-xs text-gray-500">Discover early NFTs on Base</p>
               </div>
             </div>
-            <div className="flex items-center gap-3">
-              <AddFrameButton />
-              <ShareToFarcasterButton 
-                title="Discover early NFTs with NFT Scout! 🎯"
-                text="Track fresh NFT mints on Base blockchain in real-time. Check it out:"
-                embeds={['https://base-phi-tan.vercel.app']}
-              />
+            <div className="flex items-center gap-2 sm:gap-3">
+              <div className="hidden sm:flex items-center gap-3">
+                <AddFrameButton />
+                <ShareToFarcasterButton 
+                  title="Discover early NFTs with NFT Scout! 🎯"
+                  text="Track fresh NFT mints on Base blockchain in real-time. Check it out:"
+                  embeds={['https://base-phi-tan.vercel.app']}
+                />
+              </div>
               <ConnectButton />
             </div>
           </div>
@@ -201,13 +204,13 @@ export default function Home() {
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Hero */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4">
+        <div className="text-center mb-8 sm:mb-12 px-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
             <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
               Track Fresh NFT Mints
             </span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto px-2 sm:px-0">
             Real-time NFT discovery on Base blockchain. No storage, no backend. 
             Pure blockchain data.
           </p>
@@ -265,9 +268,7 @@ export default function Home() {
                 {nfts.length} NFT contracts found
               </span>
               {lastUpdated && (
-                <span className="text-xs text-gray-500">
-                  Last updated: {lastUpdated.toLocaleTimeString()}
-                </span>
+                <ClientTime date={lastUpdated} />
               )}
             </div>
             <button

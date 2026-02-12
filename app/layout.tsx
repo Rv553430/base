@@ -18,7 +18,9 @@ const geistMono = localFont({
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  themeColor: '#9333ea',
+  maximumScale: 5,
+  themeColor: '#0a0a0a',
+  viewportFit: 'cover',
 }
 
 export const metadata: Metadata = {
@@ -56,9 +58,9 @@ export const metadata: Metadata = {
     creator: '@nftscout',
   },
   icons: {
-    icon: '/icon-192x192.png',
-    shortcut: '/icon-192x192.png',
-    apple: '/icon-192x192.png',
+    icon: '/icon-192x192.svg',
+    shortcut: '/icon-192x192.svg',
+    apple: '/icon-192x192.svg',
   },
   manifest: '/manifest.json',
   other: {
@@ -86,16 +88,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark" style={{ background: '#0a0a0a' }}>
       <head>
         <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#9333ea" />
+        <meta name="theme-color" content="#0a0a0a" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
         <meta name="apple-mobile-web-app-title" content="NFT Scout" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="format-detection" content="telephone=no" />
+        {/* Force background color on mobile */}
+        <style>{`
+          html, body, #__next {
+            background-color: #0a0a0a !important;
+          }
+        `}</style>
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-950 text-white min-h-screen`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-950 text-white`}
+        style={{ backgroundColor: '#0a0a0a', minHeight: '100vh', minHeight: '100dvh' }}
       >
         <Providers>
           {children}

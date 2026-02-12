@@ -28,22 +28,22 @@ export default function WalletInput({ onSubmit, isLoading = false }: WalletInput
   }
 
   return (
-    <form onSubmit={handleSubmit} className="w-full max-w-2xl mx-auto">
-      <div className="relative">
+    <form onSubmit={handleSubmit} className="w-full max-w-2xl mx-auto px-4 sm:px-0">
+      <div className="flex flex-col sm:flex-row gap-2 sm:gap-0 sm:relative">
         <input
           type="text"
           placeholder="Enter wallet address (0x...)"
           value={address}
           onChange={(e) => setAddress(e.target.value)}
-          className="w-full bg-gray-800 border border-gray-700 rounded-xl px-6 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all"
+          className="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all"
         />
         <button
           type="submit"
           disabled={isLoading}
-          className="absolute right-2 top-2 bottom-2 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-semibold px-6 rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full sm:w-auto sm:absolute sm:right-2 sm:top-2 sm:bottom-2 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-semibold px-4 sm:px-6 py-3 sm:py-0 rounded-xl sm:rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
         >
           {isLoading ? (
-            <span className="flex items-center gap-2">
+            <span className="flex items-center justify-center gap-2">
               <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24">
                 <circle
                   className="opacity-25"
@@ -68,7 +68,7 @@ export default function WalletInput({ onSubmit, isLoading = false }: WalletInput
         </button>
       </div>
       {error && (
-        <p className="mt-2 text-red-400 text-sm">{error}</p>
+        <p className="mt-2 text-red-400 text-sm px-4 sm:px-0">{error}</p>
       )}
     </form>
   )

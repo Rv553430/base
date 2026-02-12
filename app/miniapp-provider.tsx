@@ -1,10 +1,9 @@
 'use client'
 
 import { createContext, useContext, useEffect, useState, ReactNode } from 'react'
-import sdk from '@farcaster/miniapp-sdk'
 
 interface MiniappContextType {
-  sdk: typeof sdk | null
+  sdk: any | null
   isReady: boolean
   context: any
   user: any
@@ -26,22 +25,35 @@ interface MiniappProviderProps {
 }
 
 export function MiniappProvider({ children }: MiniappProviderProps) {
+  const [sdk, setSdk] = useState<any>(null)
   const [isReady, setIsReady] = useState(false)
   const [context, setContext] = useState<any>(null)
   const [user, setUser] = useState<any>(null)
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  useEffect(() => {
+    if (!mounted) return
+    
     const initSdk = async () => {
       try {
+        // Dynamically import SDK only on client
+        const miniappSdk = await import('@farcaster/miniapp-sdk')
+        const sdkInstance = miniappSdk.default
+        
         // Check if running in Farcaster frame context
         if (typeof window !== 'undefined' && window.parent !== window) {
           // Call sdk.actions.ready() to dismiss splash screen
-          await sdk.actions.ready()
+          await sdkInstance.actions.ready()
           
           // Get context
-          const ctx = await sdk.getContext()
-          const usr = await sdk.getUser()
+          const ctx = await sdkInstance.getContext()
+          const usr = await sdkInstance.getUser()
           
+          setSdk(sdkInstance)
           setContext(ctx)
           setUser(usr)
           setIsReady(true)
@@ -55,7 +67,12 @@ export function MiniappProvider({ children }: MiniappProviderProps) {
     }
 
     initSdk()
-  }, [])
+  }, [mounted])
+
+  // Prevent hydration mismatch by not rendering until mounted
+  if (!mounted) {
+    return <>{children}</>
+  }
 
   return (
     <MiniappContext.Provider value={{ sdk, isReady, context, user }}>
